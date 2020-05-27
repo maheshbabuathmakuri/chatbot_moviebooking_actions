@@ -1,0 +1,101 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- search_movies
+- inform
+entities:
+- language
+- movie_name
+- planned_date
+- theater_name
+- planned_time
+- no_of_tickets
+slots:
+  language:
+    type: text
+  movie_name:
+    type: text
+  no_of_tickets:
+    type: text
+  planned_date:
+    type: text
+  planned_time:
+    type: text
+  status:
+    type: unfeaturized
+  theater_name:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! Iam Bot. I can assist you in booking movie tickets. Please choose one
+      of the following language of movies you wanted to go for?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, Assist you in booking movie tickets.
+  utter_ask_movie_name:
+  - text: I understand you like to go for {language} movies. Please enter the Movie
+      Name.
+  utter_select_movie_name:
+  - text: I understand you like to go for {language} movies. Please select the Movie
+      Name.
+  utter_ask_planned_date:
+  - text: Please enter the date in the format of dd-mm-yy
+  utter_select_planned_date:
+  - text: Please select the date.
+  utter_ask_theater_name:
+  - text: Please enter the theater name.
+  utter_select_theater_name:
+  - text: Please select the theater name.
+  utter_ask_planned_time:
+  - text: Please enter the time in the format of hh:mm
+  utter_select_planned_time:
+  - text: Please select the show time.
+  utter_ask_no_of_tickets:
+  - text: How many tickets you want to book?
+  utter_select_no_of_tickets:
+  - text: Please select number of tickets you want to book.
+  utter_booking_status:
+  - text: As per your interest, {no_of_tickets} tickets for {movie_name} {language}
+      movie in {theater_name} on {planned_date} at {planned_time} booked successfully.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- find_language_types
+- find_movie_names
+- find_available_dates
+- find_theater_names
+- find_show_timings
+- find_no_of_tickets
+- utter_ask_theater_name
+- utter_select_theater_name
+- utter_select_planned_time
+- utter_ask_movie_name
+- utter_select_movie_name
+- utter_ask_no_of_tickets
+- utter_select_no_of_tickets
+- utter_booking_status
+- utter_ask_planned_date
+- utter_select_planned_date
+- utter_ask_planned_time
+forms:
+- ticket_booking_form
